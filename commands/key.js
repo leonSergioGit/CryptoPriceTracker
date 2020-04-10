@@ -30,11 +30,20 @@ const key = {
 
             return key;
         } catch(err) {
-
+            console.error(err.message.red);
         }
     },
     remove(){
-        console.log('Hello from remove')
+        try {
+            const keyManager = new KeyManager();
+            keyManager.deleteKey();
+
+            console.log('Key Removed ', key.blue);
+
+            return;
+        } catch(err) {
+            console.error(err.message.red);
+        }
     }
 }
 
